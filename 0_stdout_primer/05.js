@@ -7,6 +7,7 @@
     url: https://paiza.jp/works/mondai/stdout_primer/stdout_primer__specific_split_step1
     time: 45min
     thoughts: すごく難しかった。BigInt()知らなかった...正規表現でも3桁ごとに , を入れれるらしいが、ごちゃごちゃしてしまう... number.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    コミットメッセージを間違えたのでどうにかしたかったが、わからなかった。
   */
 
  //  const lines = [];
