@@ -2,9 +2,9 @@
 
 {
   /*
-    【文字列の出力】入力された 10 個の文字列を出力
+    【n * n の 2 次元配列の表示】N * N の九九表の出力
     practiceDate: 2024XXXX
-    url: 
+    url: https://paiza.jp/works/mondai/stdout_primer/stdout_primer__2dim_array_step1
     time: 
     thoughts: 
   */
