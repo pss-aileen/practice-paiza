@@ -2,7 +2,7 @@
 
 {
   /*
-    title
+    title: 
     practiceDate: 2024XXXX
     url: 
     time: 
