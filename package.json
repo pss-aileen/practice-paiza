@@ -1,0 +1,15 @@
+{
+  "name": "practice-paiza",
+  "version": "1.0.0",
+  "description": "- プログラミングスキル向上のために取り組み中 - 学習ログとしてこちらにコードをためています",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx ts-node"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
