@@ -9,13 +9,13 @@
 
 **実行テスト**
 
-```
+```shell
 npm test xx.ts
 ```
 
 **トランスパイル**
 
-```
+```shell
 tsc -p ./tsconfig.json
 ```
 
