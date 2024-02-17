@@ -53,3 +53,23 @@ const lines = ['10 20 30 40'];
 const [height, width, row, column] = lines[0].split(" ").map(Number);
 console.log(height, width, row, column); // 10 20 30 40
 ```
+
+```javascript
+const lines = ["3 4", "sample sample", "sample sample"];
+const [shopProductsNumber, customerShoppingListNumber]: number[] = lines[0].split(" ").map(Number);
+```
+- 最初の入力を `split` で分けて、分割代入すると楽
+
+## 連想配列
+```javascript
+// 商品名をキー、価格を値として持つマップを作成
+const shopProductsPrices = new Map<string, number>();
+shopProductsPrices.set("pencil", 50);
+shopProductsPrices.set("book", 100);
+shopProductsPrices.set("eraser", 30);
+
+// 商品の価格を取得
+console.log(shopProductsPrices.get("pencil")); // Output: 50
+console.log(shopProductsPrices.get("pen")); // Output: undefined
+```
+- `new Map`: [MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Map)

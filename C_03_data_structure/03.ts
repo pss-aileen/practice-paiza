@@ -5,10 +5,11 @@
     title: 商品の検索
     practiceDate: 20240216
     url: https://paiza.jp/works/mondai/data_structure/data_structure__dict_step1
-    time: 47min（step02まで）step04の途中まで55min
+    time: 47min（step02まで）step04の途中まで55min,最後まで55min = 2h37min
     thoughts: 
       - 急に難易度があがって難しいので、一旦step02で終了
       - むずしくてstep04も途中で断念、また時間がある時にといてみる
+      - 最後までとりあえず解いたが、ChatGPTがないと解けなかった、みんなどうやってロジックを考えているのかが気になった
   */
 
   //  const lines = [];
@@ -78,34 +79,73 @@
     console.log(outputInfo.join("\n"));
   }
 
-  step04();
+  // step04();
   function step04() {
+    // わからなかったのでChatGPTに教えてもらった
+    // 最初はとにかくループでやろうと思っていたけど、ループだと難しかった。
+    // mapでキーを指定できたことにより、該当するものを呼び出して、それに対する値を返すことができた
     const lines: string[] =
       [
         '3 4',
         'eraser 50', 'pencil 30', 'book 100',
         'book', 'eraser', 'pencil', 'margaret'
       ];
-    const firstLineValues: number[] = lines[0].split(" ").map(Number);
-    const shopProductsNumber: number = firstLineValues[0];
-    const customerShoppingListNumber: number = firstLineValues[1];
-    const shopProductsPrices = lines.slice(1, shopProductsNumber + 1).map((value) => value.split(" "));
-    const customerShoppingList = lines.slice(shopProductsNumber + 1);
-    console.log(shopProductsPrices, customerShoppingList);
-    for (let i = 0; i < customerShoppingList.length; i++) {
-      for (let j = 0; j < shopProductsPrices.length; j++) {
-        if (customerShoppingList[i] === shopProductsPrices[j][0]) {
-          console.log(shopProductsPrices[j][1]);
-        }
 
-        if ( j === shopProductsPrices.length - 1) { 
-          console.log("-1");
-        }
-      }
-    }
+    const [shopProductsNumber, customerShoppingListNumber]: number[] = lines[0].split(" ").map(Number);
+
+    const shopProductsPrices = new Map<string, number>();
+    lines.slice(1, shopProductsNumber + 1).forEach((line, index) => {
+      const [product, price] = line.split(" ");
+      shopProductsPrices.set(product, Number(price));
+    });
+
+    const customerShoppingList = lines.slice(shopProductsNumber + 1);
+    const result: number[] = customerShoppingList.map(item => {
+      const price = shopProductsPrices.get(item);
+      return price !== undefined ? price : -1;
+    });
+
+    console.log(result.join("\n"));
   }
 
   boss();
   function boss() {
+    const lines: string[] = ['3 2', 'a', 'b', 'c', 'b', 'd'];
+    // const lines: string[] = ["6 2", "pai", "za", "p", "pa", "pai", "za", "za", "pai"];
+    const [n, q] = lines[0].split(" ").map(Number);
+
+    const nStrings = lines.slice(1, n + 1);
+    const qStrings = lines.slice(n + 1);
+    console.log(nStrings, qStrings);
+
+    const result = qStrings.map(string => {
+      let order = 0;
+      for (let i = 0; i < nStrings.length; i++) {
+        if (string === nStrings[i]) {
+          order = i + 1;
+          return order;
+        }
+      }
+      return -1;
+    });
+
+    console.log(result.join("\n"));
   }
+
+  boss_gpt();
+  function boss_gpt() {
+    const lines: string[] = ['3 2', 'a', 'b', 'c', 'b', 'd'];
+    const [N, Q] = lines[0].split(' ').map(Number);
+    const S: string[] = lines.slice(1, N + 1);
+    const T: string[] = lines.slice(N + 1);
+
+    const result: number[] = [];
+    for (let i = 0; i < Q; i++) {
+        const index = S.indexOf(T[i]);
+        result.push(index !== -1 ? index + 1 : -1);
+    }
+
+    console.log(result.join('\n'));
+  }
+  // indexOfでもよかったのか、と思った
 }
