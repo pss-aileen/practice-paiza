@@ -4,10 +4,11 @@
       title: 商品の検索
       practiceDate: 20240216
       url: https://paiza.jp/works/mondai/data_structure/data_structure__dict_step1
-      time: 47min（step02まで）step04の途中まで55min
+      time: 47min（step02まで）step04の途中まで55min,最後まで55min = 2h37min
       thoughts:
         - 急に難易度があがって難しいので、一旦step02で終了
         - むずしくてstep04も途中で断念、また時間がある時にといてみる
+        - 最後までとりあえず解いたが、ChatGPTがないと解けなかった、みんなどうやってロジックを考えているのかが気になった
     */
     //  const lines = [];
     // step01();
@@ -114,4 +115,18 @@
         });
         console.log(result.join("\n"));
     }
+    boss_gpt();
+    function boss_gpt() {
+        const lines = ['3 2', 'a', 'b', 'c', 'b', 'd'];
+        const [N, Q] = lines[0].split(' ').map(Number);
+        const S = lines.slice(1, N + 1);
+        const T = lines.slice(N + 1);
+        const result = [];
+        for (let i = 0; i < Q; i++) {
+            const index = S.indexOf(T[i]);
+            result.push(index !== -1 ? index + 1 : -1);
+        }
+        console.log(result.join('\n'));
+    }
+    // indexOfでもよかったのか、と思った
 }
