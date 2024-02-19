@@ -3,11 +3,12 @@
 {
   /*
     title: 集合の結合
-    practiceDate: 20240218
+    practiceDate: 20240218, 20240219
     url: https://paiza.jp/works/mondai/data_structure/data_structure__set_step1
-    time: 
+    time: 26min, 42min
     thoughts: 
       - step03の問題文の意味がわからない...一旦中断
+      - boss途中ですが一旦中断
   */
 
   //  const lines = [];
@@ -18,11 +19,11 @@
     const lines: string[] = ['5 6', '1 2 3 4 5'];
     const [_, targetNumber]: number[] = lines[0].split(" ").map(Number);
     const numbers: number[] = lines[1].split(" ").map(Number);
-    const result:string = numbers.includes(targetNumber) ? "Yes" : "No";
+    const result: string = numbers.includes(targetNumber) ? "Yes" : "No";
     console.log(result);
   }
 
-  step02();
+  // step02();
   function step02() {
     const lines: string[] = ['6', '1 2 3 3 4 5 5 5 5 6 6 6'];
     const numbers: number[] = lines[1].split(" ").map(Number);
@@ -33,15 +34,68 @@
     // filteredSequentialNumbers 連続をフィルターしたナンバー...もっとわかりやすくしたいが...
   }
 
-  step03();
+  // step03();
   function step03() {
+    // chatgptの力を借りた
+    const lines: string[] = ['9', '1 2 3 2 5 3 3 10 2'];
+    const a: number[] = lines[1].split(" ").map(Number);
+
+    checkDuplicates(a);
+
+    function checkDuplicates(array: number[]) {
+      let seen = new Set();
+      for (let i = 0; i < array.length; i++) {
+        if (seen.has(array[i])) {
+          console.log("Yes");
+        } else {
+          if (i > 0) console.log("No");
+          seen.add(array[i]);
+        }
+      }
+    }
   }
 
   step04();
   function step04() {
+    const lines: string[] = ["2", "1000000002 1000000002"];
+    const a: bigint[] = lines[1].split(" ").map(BigInt);
+
+    checkDuplicates(a);
+
+    function checkDuplicates(array: bigint[]) {
+      let seen = new Set();
+      for (let i = 0; i < array.length; i++) {
+        if (seen.has(array[i])) {
+          console.log("Yes");
+        } else {
+          if (i > 0) console.log("No");
+          seen.add(array[i]);
+        }
+      }
+    }
   }
 
   boss();
   function boss() {
+    const lines: string[] = ['3', '1 2 3', '3 4 5'];
+    const a: bigint[] = lines[1].split(" ").map(BigInt);
+    const b: bigint[] = lines[2].split(" ").map(BigInt);
+    const combinedArray: bigint[] = [...a, ...b];
+
+    checkDuplicates(combinedArray);
+
+    function checkDuplicates(array: bigint[]) {
+      let seen = new Set();
+      for (let i = 0; i < array.length; i++) {
+        if (seen.has(array[i])) {
+        } else {
+          if (i > 0) console.log("No");
+          seen.add(array[i]);
+        }
+      }
+
+      const sortedArray: number[] = [...seen].sort((a: bigint, b: bigint) => a - b).map(Number);
+      console.log(sortedArray.join(" "));
+    }
   }
 }

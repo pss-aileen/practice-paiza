@@ -84,3 +84,23 @@ console.log(shopProductsPrices.get("pencil")); // Output: 50
 console.log(shopProductsPrices.get("pen")); // Output: undefined
 ```
 - `new Map`: [MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Map)
+
+## .filter((item, index, array)=>{})
+```javascript
+  const numbersRemovedDuplicates = numbers.filter((item, index, array) => {
+      return item !== array[index + 1];
+  });
+```
+- 現在のitemと、次のitemの値を比較することができる
+
+## 値を格納して、配列に特定の値があるかチェックする `Set`
+
+```javascript
+const set1 = new Set([1, 2, 3, 4, 5]);
+console.log(set1.has(1)); // Output: true
+console.log(set1.has(6)); // Output: false
+```
+
+- 重複する値は格納できない
+- `add` した順番で格納されていく
+- [Set](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Set)
