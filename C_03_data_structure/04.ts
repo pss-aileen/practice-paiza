@@ -55,7 +55,7 @@
     }
   }
 
-  step04();
+  // step04();
   function step04() {
     const lines: string[] = ["2", "1000000002 1000000002"];
     const a: bigint[] = lines[1].split(" ").map(BigInt);
@@ -78,23 +78,25 @@
   boss();
   function boss() {
     const lines: string[] = ['3', '1 2 3', '3 4 5'];
-    const a: bigint[] = lines[1].split(" ").map(BigInt);
-    const b: bigint[] = lines[2].split(" ").map(BigInt);
-    const combinedArray: bigint[] = [...a, ...b];
+    const a: string[] = lines[1].split(" ");
+    const b: string[] = lines[2].split(" ");
+    const combinedArray: string[] = [...a, ...b];
 
     checkDuplicates(combinedArray);
 
-    function checkDuplicates(array: bigint[]) {
-      let seen = new Set();
+    function checkDuplicates(array: string[]) {
+      let seen = new Set<string>();
       for (let i = 0; i < array.length; i++) {
         if (seen.has(array[i])) {
         } else {
-          if (i > 0) console.log("No");
           seen.add(array[i]);
         }
       }
-
-      const sortedArray: number[] = [...seen].sort((a: bigint, b: bigint) => a - b).map(Number);
+      const sortedArray: bigint[] = Array.from(seen).map(BigInt).sort((a, b) => {
+        if (a > b) return 1;
+        if (a < b) return -1;
+        return 0;
+      });
       console.log(sortedArray.join(" "));
     }
   }

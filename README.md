@@ -104,3 +104,23 @@ console.log(set1.has(6)); // Output: false
 - 重複する値は格納できない
 - `add` した順番で格納されていく
 - [Set](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Set)
+
+### `Set` された配列から配列を作る...？
+
+```typescript
+function checkDuplicates(array: string[]) {
+  let seen = new Set<string>();
+  for (let i = 0; i < array.length; i++) {
+    if (seen.has(array[i])) {
+    } else {
+      seen.add(array[i]);
+    }
+  }
+  const sortedArray: bigint[] = Array.from(seen).map(BigInt).sort((a, b) => {
+    if (a > b) return 1;
+    if (a < b) return -1;
+    return 0;
+  });
+    console.log(sortedArray.join(" "));
+}
+```

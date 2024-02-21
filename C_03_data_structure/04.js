@@ -4,9 +4,10 @@
       title: 集合の結合
       practiceDate: 20240218, 20240219
       url: https://paiza.jp/works/mondai/data_structure/data_structure__set_step1
-      time: 26min,
+      time: 26min, 42min
       thoughts:
         - step03の問題文の意味がわからない...一旦中断
+        - boss途中ですが一旦中断
     */
     //  const lines = [];
     // step01();
@@ -48,7 +49,7 @@
             }
         }
     }
-    step04();
+    // step04();
     function step04() {
         const lines = ["2", "1000000002 1000000002"];
         const a = lines[1].split(" ").map(BigInt);
@@ -69,5 +70,28 @@
     }
     boss();
     function boss() {
+        const lines = ['3', '1 2 3', '3 4 5'];
+        const a = lines[1].split(" ");
+        const b = lines[2].split(" ");
+        const combinedArray = [...a, ...b];
+        checkDuplicates(combinedArray);
+        function checkDuplicates(array) {
+            let seen = new Set();
+            for (let i = 0; i < array.length; i++) {
+                if (seen.has(array[i])) {
+                }
+                else {
+                    seen.add(array[i]);
+                }
+            }
+            const sortedArray = Array.from(seen).map(BigInt).sort((a, b) => {
+                if (a > b)
+                    return 1;
+                if (a < b)
+                    return -1;
+                return 0;
+            });
+            console.log(sortedArray.join(" "));
+        }
     }
 }
