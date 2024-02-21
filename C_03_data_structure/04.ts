@@ -5,10 +5,11 @@
     title: 集合の結合
     practiceDate: 20240218, 20240219
     url: https://paiza.jp/works/mondai/data_structure/data_structure__set_step1
-    time: 26min, 42min
+    time: 26min, 42min, 18min = 1h26min
     thoughts: 
       - step03の問題文の意味がわからない...一旦中断
       - boss途中ですが一旦中断
+      - 難しかった...
   */
 
   //  const lines = [];
