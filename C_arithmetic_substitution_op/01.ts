@@ -5,7 +5,7 @@
     title: 累乗 2
     practiceDate: 20240222
     url: https://paiza.jp/works/mondai/arithmetic_substitution_op/arithmetic_substitution_op__arithmetic_step1
-    time: 20min
+    time: 25min
     thoughts: 
       - 小数点を丸める方法が思い出せなかった Math.floor
   */
@@ -35,16 +35,23 @@
     console.log(x, y);
   }
 
-  step04();
+  // step04();
   function step04(): void {
     const lines: string[] = ['202 400 37'];
     const [a, b, c]: number[] = lines[0].split(" ").map(Number);
     console.log(a * a, b * b + c * c);
   }
 
-  boss();
-  function boss(): void {
+  // step05();
+  function step05(): void {
     const [a, b, c]: number[] = [202, 134, 107];
     console.log(((a + b) * c) ** 2);
+  }
+
+  boss();
+  function boss(): void {
+    const lines: string[] = ["28 57 33 73"];
+    const [a, b, c, d]: number[] = lines[0].split(" ").map(Number);
+    console.log((((a + b) * c) ** 2) % d);
   }
 }
