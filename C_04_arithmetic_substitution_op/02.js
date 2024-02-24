@@ -4,7 +4,7 @@
       title: 代入演算 4
       practiceDate: 20240223
       url: https://paiza.jp/works/mondai/arithmetic_substitution_op/arithmetic_substitution_op__substitution_step1
-      time:
+      time: 13min
       thoughts:
     */
     //  const lines = [];

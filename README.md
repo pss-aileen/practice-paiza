@@ -124,3 +124,18 @@ function checkDuplicates(array: string[]) {
     console.log(sortedArray.join(" "));
 }
 ```
+
+### Boolean
+- `false`
+  - `undefined`
+  - `null`
+  - `0`
+  - `-0`
+  - `Nan`
+  - `0n`
+  - `""`: 中身のない文字列
+- `true`
+  - 0以外の数字
+  - `"text"`: 文字列
+  - シンボル
+  - 全てのオブジェクト
