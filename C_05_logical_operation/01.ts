@@ -8,6 +8,7 @@
     time: step07まで40min
     thoughts: 
       - step08の二進数がわからない...
+      - またいつか取り組んでみる issue #1
   */
 
   //  const lines = [];

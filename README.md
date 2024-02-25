@@ -125,7 +125,7 @@ function checkDuplicates(array: string[]) {
 }
 ```
 
-### Boolean
+## Boolean
 - `false`
   - `undefined`
   - `null`

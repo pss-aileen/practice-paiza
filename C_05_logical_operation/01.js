@@ -4,8 +4,10 @@
       title: 論理演算を用いた計算のまとめ
       practiceDate: 20240224
       url: https://paiza.jp/works/mondai/logical_operation/logical_operation__basic_step1
-      time:
+      time: step07まで40min
       thoughts:
+        - step08の二進数がわからない...
+        - またいつか取り組んでみる issue #1
     */
     //  const lines = [];
     // step01();
