@@ -126,6 +126,7 @@ function checkDuplicates(array: string[]) {
 ```
 
 ## Boolean
+
 - `false`
   - `undefined`
   - `null`
@@ -139,3 +140,11 @@ function checkDuplicates(array: string[]) {
   - `"text"`: 文字列
   - シンボル
   - 全てのオブジェクト
+
+## slice(start, end)
+
+```typescript
+const lines: string[] = ['2', 'pa', 'iza'];
+const strings: string[] = lines.slice(1);
+console.log(strings); // Output: [ 'pa', 'iza' ]
+```
