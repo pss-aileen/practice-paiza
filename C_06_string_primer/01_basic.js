@@ -3,8 +3,9 @@
     /*
       practiceDate: 20240225
       url: https://paiza.jp/works/mondai/string_primer/basic_step1
-      time: 10minから
+      time: 23min
       thoughts:
+        - 基礎の復習ができた
     */
     //  const lines: string[] = [];
     // 文字列の出力 (paizaランク D 相当)

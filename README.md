@@ -30,6 +30,8 @@ tsc -p ./tsconfig.json
 ・TypeScript
 ・既存のコードの良い点を教えて
 ・誰がみても、新人が見てもわかるようなコードにする
+・const linesは定数名を変えたり、形式を変えたりしないでください
+・JSDocコメントもつけてください
 ＜コード＞
 
 ```
@@ -148,3 +150,6 @@ const lines: string[] = ['2', 'pa', 'iza'];
 const strings: string[] = lines.slice(1);
 console.log(strings); // Output: [ 'pa', 'iza' ]
 ```
+
+# Memo
+- JSDocの導入検討、調査 [TypeScript: Documentation - JSDocリファレンス](https://www.typescriptlang.org/ja/docs/handbook/jsdoc-supported-types.html)
