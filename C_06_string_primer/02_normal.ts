@@ -4,7 +4,7 @@
   /*
     practiceDate: 20240226
     url: https://paiza.jp/works/mondai/string_primer/normal_step1
-    time: step03までで44min
+    time: step03までで44min,step07まで17min
     thoughts: 
       - JSDocというものを知った、これから練習で使ってみる
       - あと操作系は関数にまとめる練習をしてみる
@@ -36,7 +36,7 @@
   }
 
   // 文字列の書き換え
-  step03();
+  // step03();
   function step03(): void {
     const lines: string[] = ['paiza', '1 P'];
 
@@ -62,23 +62,63 @@
   }
 
   // 文字列から数値への変換
-  step04();
+  // step04();
   function step04(): void {
+    const lines: string[] = ['813'];
+    const value: number = Number(lines[0]);
+
+    function calculateValue(value: number): number {
+      let result = value - 813;
+      return result;
+    }
+
+    const result = calculateValue(value);
+    console.log(result)
   }
 
-  // 
-  step05();
+  // 数値から文字列への変換 (paizaランク D 相当)
+  // step05();
   function step05(): void {
+    const lines: string[] = ['1', '1', '1'];
+    const linesNumber: number[] = lines.map(Number);
+    const x: number = linesNumber[0];
+    const y: number = linesNumber[1];
+    const n: number = linesNumber[2] - 1;
+    const sum: string[] = String(x + y).split("");
+    console.log(sum[n]);
   }
 
-  // 
-  step06();
+  // 大文字から小文字への変換 (paizaランク D 相当)
+  // step06();
   function step06(): void {
+    const lines: string[] = ["PAIZA"];
+    const string: string = lines[0];
+    const lowerCaseString: string = string.toLowerCase();
+    console.log(lowerCaseString);
   }
 
-  // 
+  // 小文字から大文字への変換 (paizaランク D 相当)
   step07();
   function step07(): void {
+    const lines: string[] = ["paiza"];
+    const string: string = lines[0];
+    const upperCaseString: string = string.toUpperCase();
+    console.log(upperCaseString);
+  }
+
+  // 
+  step09();
+  function step09(): void {
+  }
+
+  // 
+  step10();
+  function step10(): void {
+  }
+
+  // 
+  step11();
+  function step11(): void {
   }
 
 }
