@@ -4,11 +4,13 @@
   /*
     practiceDate: 20240226
     url: https://paiza.jp/works/mondai/string_primer/normal_step1
-    time: step03までで44min,step07まで17min
+    time: step03までで44min,step07まで17min,最後まで24min = 合計85min
     thoughts: 
       - JSDocというものを知った、これから練習で使ってみる
       - あと操作系は関数にまとめる練習をしてみる
       - 変数、定数名をもっときちんとつけられるようにChatGPTなどを使いながらやる
+      - return char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase() が面白かった
+      - ChatGPTで答えを見なければ、わざわざ大文字と小文字が合うかどうかを調べて難しいアルゴリズムを組むところだった
   */
 
   //  const lines: string[] =
@@ -98,7 +100,7 @@
   }
 
   // 小文字から大文字への変換 (paizaランク D 相当)
-  step07();
+  // step07();
   function step07(): void {
     const lines: string[] = ["paiza"];
     const string: string = lines[0];
@@ -106,19 +108,50 @@
     console.log(upperCaseString);
   }
 
-  // 
-  step09();
+  // 大文字小文字の反転 (paizaランク D 相当)
+  // step08();
+  function step08(): void {
+    // ChatGPTの力を拝借
+    // Aという文字をupperCaseにして、比較してtrueだとlowerCaseに変更、falseであればtoUpperCaseにするという関数...
+    // 発想が思いつかなかったので面白いなと感じた
+    const lines: string[] = ['Paiza'];
+
+    function swapCase(str: string) {
+      return str.split("").map(char => {
+        return char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase();
+      }).join("");
+    }
+
+    console.log(swapCase(lines[0]));
+  }
+
+  // 文字列の検索 (paizaランク D 相当)
+  // new RegExpをするとき、しないときの違い
+  // step09();
   function step09(): void {
+    const lines: string[] = ['paiza', 'iza'];
+    const str = lines[0];
+    const regex = new RegExp(lines[1]);
+    const result = regex.test(str) ? "YES" : "NO";
+    console.log(result);
   }
 
-  // 
-  step10();
+  // 文字列の反転 (paizaランク D 相当)
+  // step10();
   function step10(): void {
+    const lines: string[] = ["jiargajagrpdasncoqefhioagrhoahioghaiohrwiwiwiwiwikfkkfkk"];
+    const strings: string[] = lines[0].split("");
+    const reversedStrings: string[] = strings.reverse();
+    console.log(reversedStrings.join(""));
   }
 
-  // 
+  // 回文判定 (paizaランク D 相当)
   step11();
   function step11(): void {
+    const lines: string[] = ["qpwoeirutyyturieowpq"];
+    const strings: string[] = lines[0].split("");
+    const reversedStrings: string[] = strings.reverse();
+    console.log(reversedStrings.join("") === lines[0] ? "YES" : "NO");
   }
 
 }
