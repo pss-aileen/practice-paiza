@@ -2,27 +2,42 @@
 
 {
   /*
-    practiceDate: 20240XXXX
-    url: 
-    time: 
+    practiceDate: 202400310
+    url: https://paiza.jp/works/mondai/string_primer/advance_step1
+    time: step03まで18min
     thoughts: 
   */
 
   //  const lines: string[] = [];
 
   // 
-  step01();
+  // step01();
   function step01(): void {
+    const lines: string[] = ["C,Cpp,Java,JavaScript,Ruby,HTML,CSS,SQL"];
+    const splitedStrings: string[] = lines[0].split(",");
+    console.log(splitedStrings.join("\n"));
   }
 
   // 
-  step02();
+  // step02();
   function step02(): void {
+    const lines: string[] = ["0645/06/14/00:00"];
+    const splitedStrings: string[] = lines[0].split("/");
+    const splitedTime: string[] = splitedStrings[3].split(":");
+    splitedStrings.pop();
+    const strings: string[] = [...splitedStrings, ...splitedTime];
+    console.log(strings.join("\n"));
   }
 
   // 
   step03();
   function step03(): void {
+    const lines: string[] = ["1212/12/12 12:12"];
+    const splitedStrings: string[] = lines[0].split(" ");
+    const dateInfo: string[] = splitedStrings[0].split("/");
+    const timeInfo: string[] = splitedStrings[1].split(":");
+    const answer = [...dateInfo, ...timeInfo];
+    console.log(answer.join("\n"));
   }
 
   // 
