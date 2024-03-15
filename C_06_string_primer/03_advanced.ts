@@ -4,7 +4,7 @@
   /*
     practiceDate: 202400310
     url: https://paiza.jp/works/mondai/string_primer/advance_step1
-    time: step03まで18min
+    time: step03まで18min、step04まで3min
     thoughts: 
   */
 
@@ -30,7 +30,7 @@
   }
 
   // 
-  step03();
+  // step03();
   function step03(): void {
     const lines: string[] = ["1212/12/12 12:12"];
     const splitedStrings: string[] = lines[0].split(" ");
@@ -43,6 +43,10 @@
   // 
   step04();
   function step04(): void {
+    const lines: string[] = ['813a'];
+    const target: string = lines[0];
+    const result:any = Number(target) ? "YES" : "NO";
+    console.log(result);
   }
 
   // 
